@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo "Done"
+echo "Testing github actions"
 exit 0
