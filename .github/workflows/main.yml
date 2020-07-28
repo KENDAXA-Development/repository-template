@@ -16,18 +16,33 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: [3.8]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
+    # Install python according to version specified in matrix
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python }}
 
     # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
+    - name: Install tox
+      run: pip install tox
+
+    - name: Run tox (flake8, mypy, tests and cove coverage)
       run: |
-        echo Running build script
-        bash build.sh
+        echo "Just showing off the multi command option, next command will run tox."
+        tox
+
+    # Generate an artifact from this build
+    - name: Upload code coverage results
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage-result-${{ matrix.python-version }}
+        path: htmlcov/
