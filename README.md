@@ -1,6 +1,7 @@
 # Welcome to repository-template
 
-## What is repository-template?
+![CI](https://github.com/KENDAXA-Development/repository-template/workflows/CI/badge.svg)
+
 
 This is a template repository for Kendaxa Open Source projects. It provides the following features:
 - MIT license file, the default license for Kendaxa Open Source projects.

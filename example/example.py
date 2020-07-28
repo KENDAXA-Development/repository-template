@@ -2,7 +2,7 @@
 
 """This is an example program written in python to show github Actions.
 
-When a pull request is made the workflow defined in .github/workflows/blank.yml will be executed, which will check this
+When a pull request is made the workflow defined in .github/workflows/main.yml will be executed, which will check this
 file for code style (flake8), typing (mypy) and run the tests in tests/. If any step fails the build is considered
 failed and the pull requests cannot be merged.
 """
