@@ -19,7 +19,7 @@ The files present in the repository are listed below:
 │   │   ├── bug_report.md       # Template for bug report issues.
 │   │   └── feature_request.md  # Template for feature request issues.
 │   └── workflows
-│       └── blank.yml           # Definition for Github Continuous Integration.
+│       └── main.yml           # Definition for Github Continuous Integration.
 ├── .gitignore                  # Files to shouldn't be tracked by git.
 ├── LICENSE.txt                 # LICENSE file (MIT).
 ├── README.md                   # You are here!
@@ -49,6 +49,16 @@ After creating your repository from this template you can start by filling in th
 
 To run the automated tests for the python example just execute `tox`. It will generate a virtual environment with necessary dependencies and install the package in it. Then it will run flake8, mypy, coverage, and the tests from `tests/` directory, finally generating a report in the standard output plus the code coverage html page on `htmlcov/index.html`.
 
+
+### Continuous Integration
+
+The continuous integration is managed by [Github Actions](https://docs.github.com/en/actions). The file [main.yml](./.github/workflows/main.yml) contains an example with the most important features of it.
+
+The section `on:` states that the CI will run on master and when pull requests are created and the target branch is master. The `runs-on` statement defines the runner which will execute the build, in this case "ubuntu-latest" (check [this link](https://docs.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners) for the complete list of available runners hosted by Github). The `steps` here are equivalent to Tasks in bamboo, you can use pre-defined actions from Github or execute commands and scripts. The first step consists of downloading the repository, than we set up python configuration, run `tox` and finally save the cove coverage html page as an artifact.
+
+### Issue Templates
+
+Issue templates are meant to guide the users and developers on writing well descriptive issues. This repository includes one template for bug report and another for future request, both under `.github/ISSUE_TEMPLATE/` repositories. When clicking on "New Issue" in the project page the user can chose the template, which will provide the issue form with some details already filled in. 
 
 ## Contributing
 
