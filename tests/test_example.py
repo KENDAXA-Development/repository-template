@@ -14,4 +14,4 @@ class ExampleTest(unittest.TestCase):
 
     def test_returns_false_when_language_does_not_match(self) -> None:
         """Test that the function returns False when given text does not belongs to language selected."""
-        self.assertFalse(is_language("I'm the one who knocks!", language="pt"))
+        self.assertFalse(is_language("I'm the one who knocks!", language="en"))
