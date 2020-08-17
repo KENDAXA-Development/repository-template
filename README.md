@@ -5,6 +5,7 @@
 
 This is a template repository for Kendaxa Open Source projects. It provides the following features:
 - MIT license file, the default license for Kendaxa Open Source projects.
+- BSD license file, license for Kendaxa Open Source projects which use any BSD licensed dependency.
 - CONTRIBUTING.md file description how the community can contribute to the project.
 - README.md file with information about the project.
 - Templates for bug reports and feature requests on Github issues.
@@ -19,9 +20,11 @@ The files present in the repository are listed below:
 │   │   ├── bug_report.md       # Template for bug report issues.
 │   │   └── feature_request.md  # Template for feature request issues.
 │   └── workflows
-│       └── main.yml           # Definition for Github Continuous Integration.
+│       └── main.yml            # Definition for Github Continuous Integration.
 ├── .gitignore                  # Files to shouldn't be tracked by git.
-├── LICENSE.txt                 # LICENSE file (MIT).
+├── LICENSE.txt                 # LICENSE file (MIT) for this template.
+├── LICENSE-MIT.txt             # LICENSE file (MIT) to use if open sourced project uses no BSD dependency.
+├── LICENSE-BSD.txt             # LICENSE file (BSD) to use if open sourced project uses any BSD dependency.
 ├── README.md                   # You are here!
 │
 │   # Files below are related to the python example.
@@ -40,7 +43,7 @@ The files present in the repository are listed below:
 └── tox.ini                     # configuration for tox and flake8
 ```
 
-Before starting your Open Source project make sure you read the Kendaxa Open Source Contribution [Guidelines](https://confluence.kendaya.net/display/KXLEIT/Open+Source+Contribution+Guidelines) and [Policy](https://confluence.kendaya.net/display/KXLEIT/Open+Source+Contribution+Policy). The example in python implements code style and typing verification using flake8 and mypy, and unit tests with unittests builtin package. If you are developing in another language look for the corresponding tools.
+The example in python implements code style and typing verification using flake8 and mypy, and unit tests with unittests builtin package. If you are developing in another language look for the corresponding tools.
 
 
 ## Getting started
@@ -67,3 +70,7 @@ Please check our [contribution guide](./CONTRIBUTING.md).
 ## License
 
 repository-template is released under the [MIT License](https://opensource.org/licenses/MIT).
+
+If open sourced project uses any BSD licensed dependency, replace `LICENSE.txt` file content in your repository with content of `LICENSE-BSD.txt`.
+
+If open sourced project uses no BSD licensed dependency, replace `LICENSE.txt` file content in your repository with content of `LICENSE-MIT.txt`.
