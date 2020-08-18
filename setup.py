@@ -20,8 +20,8 @@ def read(f_relative_path: str, read_lines: bool = False) -> Union[List[str], str
 
 def get_version() -> str:
     """Return the package version as defined in kx_core/__init__.py."""
-    init = read("example/__init__.py")
-    return re.search(r"__version__ = \"(.*?)\"", init).group(1)
+    version = read("example/__version__.py")
+    return re.search(r"__version__ = \"(.*?)\"", version).group(1)
 
 
 setup(
