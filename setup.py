@@ -25,7 +25,7 @@ def get_version() -> str:
 
 
 setup(
-    name="example",
+    name="peter_experiment_xxx01",
     version=get_version(),
     url="https://github.com/KENDAXA-Development/repository-template",
     author="Kendaxa Development s.r.o.",
