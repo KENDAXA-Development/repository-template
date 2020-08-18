@@ -20,12 +20,12 @@ def read(f_relative_path: str, read_lines: bool = False) -> Union[List[str], str
 
 def get_version() -> str:
     """Return the package version as defined in kx_core/__init__.py."""
-    init = read("example/__init__.py")
-    return re.search(r"__version__ = \"(.*?)\"", init).group(1)
+    version = read("example/__version__.py")
+    return re.search(r"__version__ = \"(.*?)\"", version).group(1)
 
 
 setup(
-    name="example",
+    name="peter_experiment_xxx01",
     version=get_version(),
     url="https://github.com/KENDAXA-Development/repository-template",
     author="Kendaxa Development s.r.o.",
@@ -41,8 +41,8 @@ setup(
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Natural Language :: English",
-        "Operating System :: OS Independent"
-        "Programming Language :: Python:: 3.8",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3.8",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities",
     ],
