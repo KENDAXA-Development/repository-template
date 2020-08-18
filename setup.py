@@ -2,7 +2,6 @@ import io
 import os
 import re
 from typing import List, Union
-from example.__version__ import __version__
 
 from setuptools import find_packages, setup
 
@@ -19,9 +18,15 @@ def read(f_relative_path: str, read_lines: bool = False) -> Union[List[str], str
         return f.readlines() if read_lines else f.read()
 
 
+def get_version() -> str:
+    """Return the package version as defined in kx_core/__init__.py."""
+    version = read("example/__version__.py")
+    return re.search(r"__version__ = \"(.*?)\"", version).group(1)
+
+
 setup(
     name="peter_experiment_xxx01",
-    version=__version__,
+    version=get_version(),
     url="https://github.com/KENDAXA-Development/repository-template",
     author="Kendaxa Development s.r.o.",
     author_email="contact-prague@kendaxa.com",
