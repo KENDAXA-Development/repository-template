@@ -63,6 +63,6 @@ jobs:
     - name: publish
       if: steps.filter.outputs.main_init == 'true' and github.event_name == 'push'
       uses: pypa/gh-action-pypi-publish@master
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_UPLOAD_API_KEY }}
+      with:
+        user: __token__
+        password: ${{ secrets.PYPI_UPLOAD_API_KEY }}
